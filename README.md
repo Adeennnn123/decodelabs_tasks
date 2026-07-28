@@ -1,61 +1,27 @@
-# DecodeLabs Data Science Tasks
+# NLP Sentiment Analysis
 
-This repository contains my Data Science internship tasks completed during the DecodeLabs Internship.
+## Project Overview
 
-## Repository Structure
+This Data Science project focuses on sentiment analysis using Natural Language Processing (NLP). The project analyzes text reviews and classifies their sentiment as positive or negative.
 
-### Task 1 - Data Cleaning and Preprocessing
+The project uses data preprocessing and text analysis techniques to prepare reviews for sentiment classification and generate useful insights from textual data.
 
-This project focuses on:
+## Objectives
 
-* Data Cleaning
-* Handling Missing Values
-* Removing Duplicates
-* Outlier Detection
-* Feature Engineering
-* Exporting the Cleaned Dataset
-
-### Task 2 - Data Analysis
-
-This project focuses on:
-
-* Data Exploration
-* Data Analysis
-* Data Visualization
-* Finding Insights from the Dataset
-
-### Task 3 - Customer Segmentation
-
-This project focuses on:
-
-* Data Cleaning and Preprocessing
-* Handling Missing Values
-* Removing Duplicate Records
-* Feature Engineering
-* Label Encoding
-* Data Scaling
-* Principal Component Analysis (PCA)
-* K-Means Clustering
-* Finding the Optimal Number of Clusters
-* Customer Segmentation
-* Cluster Evaluation
-* Data Visualization
-
-### Task 4 - NLP Sentiment Analysis
-
-This project focuses on:
-
-* Natural Language Processing
-* Text Cleaning
-* Text Tokenization
-* Stopword Removal
-* Lemmatization
-* TF-IDF Vectorization
-* Sentiment Analysis
-* Positive and Negative Sentiment Classification
-* Results Evaluation
-* Confusion Matrix
-* Classification Report
+* Load and explore the dataset
+* Understand the dataset structure
+* Check and handle missing values
+* Analyze sentiment distribution
+* Clean and preprocess text reviews
+* Convert text to lowercase
+* Remove punctuation and special characters
+* Tokenize text
+* Remove stopwords
+* Apply lemmatization
+* Convert text into numerical features using TF-IDF
+* Analyze positive and negative sentiments
+* Evaluate sentiment classification results
+* Predict sentiment for new reviews
 
 ## Technologies Used
 
@@ -68,43 +34,85 @@ This project focuses on:
 * NLTK
 * Jupyter Notebook
 
-## Repository Contents
+## Project Workflow
+
+### 1. Dataset Loading
+
+The cleaned dataset is loaded using Pandas.
+
+```python
+df = pd.read_csv("IMDB_Dataset_CLEANED.csv")
+```
+
+### 2. Data Exploration
+
+The dataset is analyzed using:
+
+* `head()`
+* `info()`
+* `shape`
+* Missing value checking
+* Sentiment value counts
+
+### 3. Sentiment Distribution
+
+A bar chart is created to visualize the distribution of positive and negative reviews in the dataset.
+
+### 4. Text Preprocessing
+
+The following NLP preprocessing steps are performed:
+
+* Convert text to lowercase
+* Remove special characters
+* Tokenize the text
+* Remove English stopwords
+* Apply WordNet lemmatization
+
+### 5. TF-IDF Vectorization
+
+The cleaned reviews are converted into numerical features using TF-IDF Vectorization.
+
+```python
+tfidf = TfidfVectorizer()
+X = tfidf.fit_transform(df["Clean_Review"])
+```
+
+### 6. Data Analysis
+
+The processed text data is analyzed to identify positive and negative sentiment patterns.
+
+### 7. Sentiment Classification
+
+The project classifies reviews into two sentiment categories:
+
+* Positive
+* Negative
+
+### 8. Results Evaluation
+
+The sentiment classification results are evaluated using:
+
+* Accuracy Score
+* Confusion Matrix
+* Classification Report
+
+### 9. New Review Analysis
+
+The project can analyze new reviews and identify whether their sentiment is positive or negative.
+
+## Project Structure
 
 ```text
-decodelabs_tasks
+Task4
 │
-├── Task1
-│   ├── Project1.ipynb
-│   ├── Dataset for Data Analytics.xlsx
-│   ├── Cleaned_Dataset.xlsx
-│   └── README.md
-│
-├── Task2
-│   ├── project2.ipynb
-│   ├── Dataset for Data Analytics(1).xlsx
-│   └── README.md
-│
-├── Task3
-│   ├── project3.ipynb
-│   ├── Dataset for Data Analytics.xlsx
-│   └── README.md
-│
-├── Task4
-│   ├── NLP_Sentiment_Analysis.ipynb
-│   ├── IMDB_Dataset_CLEANED.csv
-│   └── README.md
-│
+├── NLP_Sentiment_Analysis.ipynb
+├── IMDB_Dataset_CLEANED.csv
 └── README.md
 ```
 
-## Projects Summary
+## Conclusion
 
-| Task   | Project Name                    | Main Data Science Techniques                        |
-| ------ | ------------------------------- | --------------------------------------------------- |
-| Task 1 | Data Cleaning and Preprocessing | Data Cleaning, Missing Values, Duplicates, Outliers |
-| Task 2 | Data Analysis                   | Data Exploration, Data Analysis, Visualization      |
-| Task 3 | Customer Segmentation           | K-Means Clustering, PCA, Data Scaling               |
-| Task 4 | NLP Sentiment Analysis          | NLP, Text Preprocessing, TF-IDF, Sentiment Analysis |
+The project successfully applies Natural Language Processing techniques to analyze movie reviews and identify positive and negative sentiments. Text cleaning, tokenization, stopword removal, lemmatization, and TF-IDF Vectorization help prepare the textual data for effective sentiment analysis.
 
 ## Author
 
